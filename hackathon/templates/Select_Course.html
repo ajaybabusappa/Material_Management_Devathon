@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Select Course</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style media="screen">
+      footer{
+  
+        bottom: 0px;
+        width: 100%;
+        background: #D3D3D3;
+      }
+      .main-content{
+        display: flex;
+      }
+      .main-content .box{
+        flex-basis: 50%;
+        padding: 10px 20px;
+      }
+      .main-content .box h3{
+        color: black;
+      }
+      .main-content .box .content{
+        color: black;
+      }
+      .box h2{
+        text-transform: uppercase;
+      }
+      .box .content{
+        margin: 20px 0 0 0;
+      }
+      .left .content .social{
+        margin : 20px 0 0 0;
+      }
+      .left .content .social a span{
+        font-size: 18px;
+        color: white;
+        border-radius: 5px;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="container col-12 col-md-12">
+    <div class="jumbotron jumbotron-fluid">
+      <h1 style = "text-align:center;"><b>Material Management Portal</b></h1>
+      <h2 style = "text-align:center;"><b>National Institute of Technology Warangal</b></h2>
+      <div class="container">
+      </div>
+    </div>
+  </div>
+
+
+<div class="container col-12 col-md-6">
+    <div class="container" style ="margin-bottom:20px">
+        <table style = "margin:auto;border:0px solid white;">
+          <tr>
+            <th style = "border:6px solid black; padding:1.5px 7px 1.5px 7px;">
+              <form method="POST" action="choosed/">
+                <div class="form-group" style ="margin:auto;">
+                  
+                </div>
+                <br>
+                <div class="form-group">
+                  <h4>Choose courses available from given</h4>
+
+                  {% for i in courses_list %}
+                      <div class="form-check"style ="text-align:left;padding-left:30px">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" name="course" value="{{i.course_id}}" name="course">{{i.course_name}}|{{i.course_id}}
+                        </label>
+                      </div>
+
+                  {% endfor %}
+                      
+                </div>
+                <br>
+                    <div style="text-align:center;">
+                      <button type="submit" class="btn btn-primary">Submit </button>
+                    </div>
+              </form>
+            </th>
+          </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<br>
+<br>
+    <footer>
+      <div class="main-content">
+
+        <div class="left box">
+          <h3>Contact us</h3>
+          <div class="content">
+            <p>Email : nitwadm@gmail.com</p>
+            <p>Alternate Email : nitwdeana@gmail.com<p>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h3>Address</h3>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <a href="https://www.google.com/maps/place/National+Institute+of+Technology,+Warangal,+Telangana/@17.983523,79.5308386,15z/data=!4m5!3m4!1s0x0:0xf1b2c37fcb8fefce!8m2!3d17.983523!4d79.5308386"><span class="text"style ="color:black";>National Institute of Technology Campus, fathimanagar, Warangal, Telangana 506004</span></a>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">0870 245 9191</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

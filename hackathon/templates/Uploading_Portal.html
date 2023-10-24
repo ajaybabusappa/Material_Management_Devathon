@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Uploading Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style media="screen">
+      footer{
+    
+        bottom: 0px;
+        width: 100%;
+        background: #D3D3D3;
+      }
+      .main-content{
+        display: flex;
+      }
+      .main-content .box{
+        flex-basis: 50%;
+        padding: 10px 20px;
+      }
+      .main-content .box h3{
+        color: black;
+      }
+      .main-content .box .content{
+        color: black;
+      }
+      .box h2{
+        text-transform: uppercase;
+      }
+      .box .content{
+        margin: 20px 0 0 0;
+      }
+      .left .content .social{
+        margin : 20px 0 0 0;
+      }
+      .left .content .social a span{
+        font-size: 18px;
+        color: white;
+        border-radius: 5px;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+
+    <div class="jumbotron jumbotron-fluid">
+      <h1 style = "text-align:center;"><b>Material Management Portal</b></h1>
+      <h2 style = "text-align:center;"><b>National Institute of Technology Warangal</b></h2>
+      <div class="container">
+      </div>
+    </div>
+
+    <div class="container"style ="margin-bottom:20px">
+      <h4 style="text-align:center;">Upload your files here : </h4><br>
+      <table style = "margin:auto;">
+        <tr>
+          <th style = "border:3px solid black; padding:1.5px 10px 1.5px 10px;">
+            <form method="post" action="upload/" enctype = "multipart/form-data">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="filename">File Name :</label>
+                <input type="text" name="filename"  id="filename" placeholder="Enter file name" required>
+              </div>
+              <div class="form-group">
+                <label for="course_id">Select Course ID :</label>
+                <select class="form-control" id="course_id" name="course_id" required name="course_id">
+
+                  {% for i in x %}
+                  <option>{{i.course_id}}</option>
+                  {% endfor %}
+
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="myfile">Select files:</label>
+                <input type="file" id="myfile" name="file" multiple>
+              </div>
+              <div class="form-group">
+                <textarea name="description" rows="4" cols="40" placeholder="Description"></textarea>
+              </div>
+              <div class="form-group" style="text-align:center">
+                <button type="submit" class="btn btn-primary" style="border:2px solid black;border-radius:10px;">Upload</button>
+              </div>
+            </form>
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      <div class="main-content">
+
+        <div class="left box">
+          <h3>Contact us</h3>
+          <div class="content">
+            <p>Email : nitwadm@gmail.com</p>
+            <p>Alternate Email : nitwdeana@gmail.com<p>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h3>Address</h3>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <a href="https://www.google.com/maps/place/National+Institute+of+Technology,+Warangal,+Telangana/@17.983523,79.5308386,15z/data=!4m5!3m4!1s0x0:0xf1b2c37fcb8fefce!8m2!3d17.983523!4d79.5308386"><span class="text"style="color:black;">National Institute of Technology Campus, fathimanagar, Warangal, Telangana 506004</span></a>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">0870 245 9191</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

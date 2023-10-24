@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style media="screen">
+		footer{
+
+			bottom: 0px;
+			width: 100%;
+			background: #D3D3D3;
+		}
+		.main-content{
+			display: flex;
+		}
+		.main-content .box{
+			flex-basis: 50%;
+			padding: 10px 20px;
+		}
+		.main-content .box h3{
+			color: black;
+		}
+		.main-content .box .content{
+			color: black;
+		}
+		.box h2{
+			text-transform: uppercase;
+		}
+		.box .content{
+			margin: 20px 0 0 0;
+		}
+		.left .content .social{
+			margin : 20px 0 0 0;
+		}
+		.left .content .social a span{
+			font-size: 18px;
+			color: white;
+			border-radius: 5px;
+		}
+	</style>
+
+	 <style media="screen">
+      * {
+        box-sizing: border-box;
+      }
+      form.example input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 80%;
+      background: #f1f1f1;
+    }
+
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+
+  form.example button:hover {
+    background: #0b7dda;
+  }
+
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+    </style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<div class="container col-12 ">
+	<div class="jumbotron jumbotron-fluid">
+		<h1 style = "text-align:center;"><b>Material Management Portal</b></h1>
+		<h2 style = "text-align:center;"><b>National Institute of Technology Warangal</b></h2>
+		<div class="container">
+		</div>
+	</div>
+</div>
+
+<div class="container col-12 col-md-6 col-sm-6">
+	<h1>Searched files</h1>
+</div>
+
+	<div class="container"style ="margin-bottom:20px">
+		
+		<table style = "margin:auto;text-align:center;" class="table-responsive">
+			{% for i in files %}
+			<tr>
+				<th style = "border:3px solid black; padding:1.5px 3px 1.5px 3px;">
+					<p>Name</p>
+					{{i.map_name}}
+				</th>
+				<th style = ";border:3px solid black; padding:1.5px 3px 1.5px 3px;">
+					<p>Data</p>
+				<a href="{{i.map_data.url}}">{{i.map_data}}</a>	
+				</th>
+				<th style = "border:3px solid black; padding:1.5px 3px 1.5px 3px;">
+					<p>Course ID</p>
+					{{i.course_id}}
+				</th>
+
+
+				<th style = "border:3px solid black; padding:1.5px 3px 1.5px 3px;">
+					<p>Description</p>
+					{{i.descreption}}
+				</th>
+				{% if session %}
+				<th style = "border:3px solid black; padding:1.5px 3px 1.5px 3px;">
+					<a href="{% url  'deleteview' i.pk %}">Delete this files</a>
+				</th>
+				{% else %}
+
+
+{% endif %}
+{% endfor %}
+
+			</tr>
+		</table>
+		<br>
+
+
+
+
+
+
+
+	</div>
+
+
+{% if session %}
+
+<a href="{% url 'viewfiles' %}">Go back to all courses list</a><br>
+
+{% else %}
+
+<a href="{% url 'viewfiles' %}">Go back to all course Files</a>
+
+{% endif %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<footer>
+	<div class="main-content">
+
+		<div class="left box">
+			<h3>Contact us</h3>
+			<div class="content">
+				<p>Email : nitwadm@gmail.com</p>
+				<p>Alternate Email : nitwdeana@gmail.com<p>
+			</div>
+		</div>
+
+		<div class="right box">
+			<h3>Address</h3>
+			<div class="content">
+				<div class="place">
+					<span class="fas fa-map-marker-alt"></span>
+					<a href="https://www.google.com/maps/place/National+Institute+of+Technology,+Warangal,+Telangana/@17.983523,79.5308386,15z/data=!4m5!3m4!1s0x0:0xf1b2c37fcb8fefce!8m2!3d17.983523!4d79.5308386"><span class="text"style="color:black;">National Institute of Technology Campus, fathimanagar, Warangal, Telangana 506004</span></a>
+				</div>
+				<div class="phone">
+					<span class="fas fa-phone-alt"></span>
+					<span class="text">0870 245 9191</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

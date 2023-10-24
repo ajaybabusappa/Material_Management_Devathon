@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+ <title> Survey HomePage</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <style>
+ #button1{
+ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ border-radius: 10px;
+ border: 2px solid black;
+ transition: 0.4s;
+ }
+ #button2{
+ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ border: 2px solid black;
+ border-radius: 10px;
+ transition: 0.4s;
+ }
+ #button1:hover{
+   background-color: white;
+   color: black
+ }
+ #button2:hover{
+   background-color: white;
+   color: black
+ }
+ #a1{
+   color:black;
+ }
+ #a2{
+   color:black;
+ }
+ footer{
+  
+   bottom: 0px;
+   width: 100%;
+   background: #D3D3D3;
+ }
+ .main-content{
+   display: flex;
+ }
+ .main-content .box{
+   flex-basis: 50%;
+   padding: 10px 20px;
+ }
+ .main-content .box h3{
+   color: black;
+ }
+ .main-content .box .content{
+   color: black;
+ }
+ .box h2{
+   text-transform: uppercase;
+ }
+ .box .content{
+   margin: 20px 0 0 0;
+ }
+ .left .content .social{
+   margin : 20px 0 0 0;
+ }
+ .left .content .social a span{
+   font-size: 18px;
+   color: white;
+   border-radius: 5px;
+ }
+
+ button {
+   display: inline-block;
+ }
+ </style>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body>
+
+  <div class="jumbotron jumbotron-fluid">
+    <h1 style = "text-align:center;"><b>Material Management Portal</b></h1>
+    <h2 style = "text-align:center;"><b>National Institute of Technology Warangal</b></h2>
+    <div class="container">
+    </div>
+  </div>
+  <br>
+<center>
+  <div>
+    <button type="submit" class="btn btn-primary" id="button1"><a id="a1" href="{% url 'loginpage2' %}">Teacher</a></button>
+    <button type="submit" class="btn btn-primary " id="button2"><a id="a2" href="{% url 'loginpage1' %}">Student</a></button>
+<div>
+</center>
+<br>
+<br>
+<br>
+<br>
+<footer>
+  <div class="main-content">
+
+    <div class="left box">
+      <h3>Contact us</h3>
+      <div class="content">
+        <p>Email : nitwadm@gmail.com</p>
+        <p>Alternate Email : nitwdeana@gmail.com<p>
+      </div>
+    </div>
+
+    <div class="right box">
+      <h3>Address</h3>
+      <div class="content">
+        <div class="place">
+          <span class="fas fa-map-marker-alt"></span>
+          <a href="https://www.google.com/maps/place/National+Institute+of+Technology,+Warangal,+Telangana/@17.983523,79.5308386,15z/data=!4m5!3m4!1s0x0:0xf1b2c37fcb8fefce!8m2!3d17.983523!4d79.5308386"><span class="text"style="color:black;">National Institute of Technology Campus, fathimanagar, Warangal, Telangana 506004</span></a>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+          <span class="text">0870 245 9191</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+ </html>

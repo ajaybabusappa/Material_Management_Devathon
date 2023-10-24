@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+   
+</head>
+<body>
+
+<div class="container">
+<h2>Choose your courses textr</h2><br></br>
+<form method='POST'>
+    {% csrf_token %}
+
+	{% for x in courses_list %}
+	<div class= "row">
+<input name="{{x.id}}" type="checkbox"><h1>{{x.course_name}}</h1></input>
+    </div>
+   {% endfor %}
+
+    <a href="{% url 'takecourselist' %}">Click here please</a>
+
+</form>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Material Management Portal</title>
+        {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style media="screen">
+      footer{
+    
+        bottom: 0px;
+        width: 100%;
+        background: #D3D3D3;
+      }
+      .main-content{
+        display: flex;
+      }
+      .main-content .box{
+        flex-basis: 50%;
+        padding: 10px 20px;
+      }
+      .main-content .box h3{
+        color: black;
+      }
+      .main-content .box .content{
+        color: black;
+      }
+      .box h2{
+        text-transform: uppercase;
+      }
+      .box .content{
+        margin: 20px 0 0 0;
+      }
+      .left .content .social{
+        margin : 20px 0 0 0;
+      }
+      .left .content .social a span{
+        font-size: 18px;
+        color: white;
+        border-radius: 5px;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+<body>
+<form method="POST" action="">
+    {% csrf_token %}
+   <div class="jumbotron jumbotron-fluid">
+        <h1 style = "text-align:center;"><b>Material Management Portal</b></h1>
+        <h2 style = "text-align:center;"><b>National Institute of Technology Warangal</b></h2>
+        <div class="container">
+        </div>
+      </div>
+
+      <div class="container" style ="margin-bottom:20px">
+        <table style = "margin:auto;text-align:center;border:6px solid black">
+          <tr>
+            <th style = "width:500px;height:200px;;border:3px solid black; padding:15px 100px 15px 100px;">
+              <p>Login as : </p>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="Student"required>Student
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="Faculty"required>Faculty
+                </label>
+              </div>
+
+              <form>
+                <div class="form-group">
+                  <label for="email">Email address:</label>
+                  <input type="email" class="form-control" placeholder="Enter email" id="email"required>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" placeholder="Enter password" id="pwd"required>
+                  <input type="checkbox" onclick="showPassword()"syle ="text-align:left;">Show Password
+                </div>
+                <div class="form-group form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form><br>
+              <button type="button" class="btn btn-success"> <a style="color:white;"href="#">Sign Up</a> </button>
+            </th>
+          </tr>
+        </table>
+      </div>
+
+      <footer>
+        <div class="main-content">
+
+          <div class="left box">
+            <h3>Contact us</h3>
+            <div class="content">
+              <p>Email : nitwadm@gmail.com</p>
+              <p>Alternate Email : nitwdeana@gmail.com<p>
+            </div>
+          </div>
+
+          <div class="right box">
+            <h3>Address</h3>
+            <div class="content">
+              <div class="place">
+                <span class="fas fa-map-marker-alt"></span>
+                <a href="https://www.google.com/maps/place/National+Institute+of+Technology,+Warangal,+Telangana/@17.983523,79.5308386,15z/data=!4m5!3m4!1s0x0:0xf1b2c37fcb8fefce!8m2!3d17.983523!4d79.5308386"><span class="text"style="color:black;">National Institute of Technology Campus, fathimanagar, Warangal, Telangana 506004</span></a>
+              </div>
+              <div class="phone">
+                <span class="fas fa-phone-alt"></span>
+                <span class="text">0870 245 9191</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+<script>
+  function showPassword() {
+    var x= document.getElementById('pwd')
+    if(x.type==="password"){
+      x.type = "text"
+    }
+    else{
+      x.type = "password"
+    }
+  }
+</script>
+</form>
+</body>
+</html>
